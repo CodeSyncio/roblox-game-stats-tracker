@@ -1,4 +1,6 @@
-UniverseIdHere
-True
-#line 1 = universe id
-#line 2= Enable or Disable tutorial to get UniverseId (True or False)
+383310974
+False
+1000
+line 1 , universe id
+line 2 , Enable or Disable tutorial to get UniverseId (True or False)
+line 3 , Amount of miliseconds between GET requests (recommend 1000)
