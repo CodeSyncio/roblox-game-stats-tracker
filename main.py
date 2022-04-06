@@ -1,9 +1,26 @@
-import linecache, requests, json, os, linecache
+import linecache, requests, json, os, linecache, webbrowser
 from time import sleep as sleep
 from datetime import datetime
 from datetime import date
+from linecache import getline as getl
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
+
+TutSetting = bool(getl('config.txt', 2))
+print (TutSetting)
+
+if bool(TutSetting) == True :
+    print('To get the universe id, u need to look at the numbers after the \n on the page that opens when u press enter, and then put it in the config')
+    temp = input('press enter to open link...')
+else:
+    pass
+
+
+
+
+
+
+UnivId = getl('config.txt', 1)
 
 
 while 1 != 2:
