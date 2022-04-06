@@ -1,4 +1,4 @@
-import linecache, requests, json, os, linecache, webbrowser
+import requests, json, os, linecache, webbrowser
 from xmlrpc.client import boolean
 from time import sleep as sleep
 from datetime import datetime
@@ -46,7 +46,6 @@ while 1 != 2:
     current_time = now.strftime("%H:%M:%S")
     todaydate = date.today()
     txtstring = (str(todaydate) + '   ' + str(current_time) + '   ' +'Game: '+str(gname) + '  Total Visits: '+str(visits) + '  Curr Playing: '+str(playing) +'\n')
-    print (txtstring)
     file = open('log_'+gname+'.txt','a')
     file.write(txtstring)
     file.close

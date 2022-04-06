@@ -1,5 +1,5 @@
-383310974
-False
+UniverseIdHere
+True
 1000
 line 1 , universe id
 line 2 , Enable or Disable tutorial to get UniverseId (True or False)
