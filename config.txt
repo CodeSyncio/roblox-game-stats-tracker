@@ -1,10 +1,12 @@
 UniverseIdHere
 True
-1000
+900
 False
-1000
+1
+False
 line 1 , universe id
 line 2 , Enable or Disable tutorial to get UniverseId (True or False)
-line 3 , Amount of miliseconds between GET requests (recommend 1000)
+line 3 , Amount of miliseconds between GET requests (recommend 900 - 1000)
 line 4 , enable or disable a logging limit
 line 5 , amount of requests the script should make before exiting (gets ignored if above setting is set to false)
+line 6 , Enable or disable minified text mode (smaller log file size) (True or False)

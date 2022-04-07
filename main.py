@@ -30,6 +30,7 @@ delaystrng = str(getl('config.txt', 3))
 reqdelay = int(delaystrng) / 1000
 MaxLogSetting = (str(getl('config.txt', 4))).strip()
 MaxLogLines = int(getl('config.txt', 5))
+MinifiedSetting = (str(getl('config.txt', 6))).strip()
 
 roblox_gnamerequest =requests.get('https://games.roblox.com/v1/games?universeIds='+ UnivId)
 robloxgnametext = roblox_gnamerequest.text
@@ -49,9 +50,16 @@ while 1 != 2:
     current_time = now.strftime("%H:%M:%S")
     todaydate = date.today()
     txtstring = (str(todaydate) + '   ' + str(current_time) + '   ' +'Game: '+str(gname) + '  Total Visits: '+str(visits) + '  Curr Playing: '+str(playing) +'\n')
-    file = open('log_'+gname+'.txt','a')
-    file.write(txtstring)
-    file.close
+    minifiedTxtString =(str(todaydate) + '  ' + str(current_time) + '  ' +str(gname) + '  V: '+str(visits) + '  P: '+str(playing) +'\n')
+    if str(MinifiedSetting) == ('False'):
+        file = open('log_'+gname+'.txt','a')
+        file.write(txtstring)
+        file.close
+    else:
+        file = open('log_'+gname+'.txt','a')
+        file.write(minifiedTxtString)
+        file.close
+        
     print (txtstring)
     sleep (reqdelay)
     cls()
