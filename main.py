@@ -28,14 +28,17 @@ if str(TutSetting) == ('True') :
 UnivId = getl('config.txt', 1)
 delaystrng = str(getl('config.txt', 3))
 reqdelay = int(delaystrng) / 1000
+MaxLogSetting = (str(getl('config.txt', 4))).strip()
+MaxLogLines = int(getl('config.txt', 5))
 
 roblox_gnamerequest =requests.get('https://games.roblox.com/v1/games?universeIds='+ UnivId)
 robloxgnametext = roblox_gnamerequest.text
 roblox_gnamejson = json.loads(roblox_gnamerequest.text)
 gname = roblox_gnamejson['data'][0]['name']
 
-
+MaxLogCounter = int(0)
 while 1 != 2:
+     
     
     roblox_api_req =requests.get('https://games.roblox.com/v1/games?universeIds='+ UnivId)
     roblox_api_txt = roblox_api_req.text
@@ -52,6 +55,15 @@ while 1 != 2:
     print (txtstring)
     sleep (reqdelay)
     cls()
+    MaxLogCounter = MaxLogCounter + 1
+    if str(MaxLogSetting) == ('True') and MaxLogCounter == MaxLogLines:
+        print('Script has reached max logging lines ('+MaxLogSetting+'), press enter to quit')
+        ghostinput = input()
+        quit()
+    else:
+        pass
+        
+    
     
     
     
