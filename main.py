@@ -93,10 +93,3 @@ while 1 != 2: #infinite loop
         quit()
     else:
         pass
-        
-    
-    
-    
-    
-    
-
